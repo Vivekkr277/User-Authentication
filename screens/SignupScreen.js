@@ -16,6 +16,7 @@ export default function SignupScreen({navigation}) {
     if(email && password) {
       try{
         await createUserWithEmailAndPassword(auth, email, password);
+        alert('Signed in successfully');
       }catch(error) {
         console.log('got error : ', error);
       }
@@ -69,24 +70,24 @@ export default function SignupScreen({navigation}) {
             
                
                 <View className="justify-center items-center" >
-                    <View className="bg-cyan-200 w-4/5  items-center p-2  mt-10 rounded-2xl">
+                    <View className="bg-cyan-200 w-4/5  items-center p-2  mt-20 rounded-2xl">
                         <TouchableOpacity onPress={() => handleSignup()}>
                             <Text className="text-2xl font-medium letter tracking-wide">Sign Up</Text>
                         </TouchableOpacity>
                     </View>
 
-                    <View className="my-2">
+                    {/* <View className="my-2">
                       <Text className="text-lg font-medium" >Or</Text>
-                    </View>
+                    </View> */}
                     
 
-                    <View className="flex-row space-x-16 ">
+                    {/* <View className="flex-row space-x-16 ">
                        <AntDesign name="google" size={32} color="green" />
                         <AntDesign name="facebook-square" size={32} color="blue" />
                         <AntDesign name="instagram" size={32} color="red" />
-                    </View>
+                    </View> */}
 
-                    <View className="flex flex-row mt-6 ">
+                    <View className="flex flex-row mt-3 ">
                         <Text>Already have an account? </Text>
                         <TouchableOpacity onPress={() => navigation.navigate('login')}>
                             <Text>Log In</Text>

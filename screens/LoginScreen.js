@@ -15,6 +15,7 @@ export default function LoginScreen ({navigation}) {
     const handleLogin = async () => {
         try{
             await signInWithEmailAndPassword(auth, email, password);
+            navigation.navigate('home');
         }catch(error){
             setErr(error);
             console.log('got error : ', error);
@@ -28,7 +29,7 @@ export default function LoginScreen ({navigation}) {
 
             <View className="h-1/3 bg-cyan-200	">
               <View className="ml-3 mt-3">
-                <TouchableOpacity onPress={() => navigation.goBack()}>
+                <TouchableOpacity onPress={() => navigation.navigate('welcome')}>
                 <Ionicons name="chevron-back-circle-outline" size={36} color="gray" />
                 </TouchableOpacity>
               </View>
@@ -71,13 +72,13 @@ export default function LoginScreen ({navigation}) {
                 </View>
                 
                  <View className="justify-center items-center" >
-                    <View className="bg-cyan-200 w-4/5  items-center p-2  mt-20 rounded-2xl">
+                    <View className="bg-cyan-200 w-4/5  items-center p-2  mt-28 rounded-2xl">
                         <TouchableOpacity onPress={() => handleLogin()}>
                             <Text className="text-2xl font-medium letter tracking-wide">Log In</Text>
                         </TouchableOpacity>
                     </View>
 
-                    <View className="my-2">
+                    {/* <View className="my-2">
                       <Text className="text-lg font-medium" >Or</Text>
                     </View>
                     
@@ -86,9 +87,9 @@ export default function LoginScreen ({navigation}) {
                        <AntDesign name="google" size={32} color="green" />
                         <AntDesign name="facebook-square" size={32} color="blue" />
                         <AntDesign name="instagram" size={32} color="red" />
-                    </View>
+                    </View> */}
 
-                    <View className="flex flex-row mt-6 ">
+                    <View className="flex flex-row mt-3 ">
                         <Text>Don't have an account? </Text>
                         <TouchableOpacity onPress={() => navigation.navigate('signup')}>
                             <Text>Sign Up</Text>

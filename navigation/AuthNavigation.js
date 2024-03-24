@@ -16,8 +16,11 @@ export default function AuthNavigation() {
   if(user) {
     return (
       <NavigationContainer >
-          <Stack.Navigator initialRouteName='home'>
+          <Stack.Navigator >
+            <Stack.Screen name='login' component={LoginScreen} options={{ headerShown: false}}/>
             <Stack.Screen name='home' component={HomeScreen} options={{ headerShown: false}}/>
+            <Stack.Screen name='welcome' component={WelcomeScreen} options={{ headerShown: false}}/>
+            <Stack.Screen name='signup' component={SignupScreen} options={{ headerShown: false}}/>
           </Stack.Navigator>
       </NavigationContainer>
      
